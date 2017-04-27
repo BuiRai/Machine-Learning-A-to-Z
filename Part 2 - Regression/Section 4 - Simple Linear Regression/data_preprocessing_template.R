@@ -21,3 +21,6 @@ regressor = lm(formula = Salary ~ YearsExperience,
                data = trainingSet)
 summary(regressor)
 
+# Predicting the Test set results
+y_pred = predict(regressor, newdata = testSet)
+
