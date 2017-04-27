@@ -1,14 +1,14 @@
-# Data Preprocessing Template
+# Simple Linear Regression
 
 # -------------------------- Importing the dataset ---------------------------------
-dataset = read.csv('Data.csv')
+dataset = read.csv('Salary_Data.csv')
 # dataset = dataset[,2:3]
 
 # ------------  Splitting the dataset into the Training set and Test set # ---------
 # install.packages('caTools')
 library(caTools)
 set.seed(123)
-split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+split = sample.split(dataset$Salary, SplitRatio = 2/3)
 trainingSet = subset(dataset, split == TRUE)
 testSet = subset(dataset, split == FALSE)
 
