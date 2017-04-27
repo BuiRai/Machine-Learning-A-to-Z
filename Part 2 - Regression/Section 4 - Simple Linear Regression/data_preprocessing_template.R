@@ -16,3 +16,8 @@ testSet = subset(dataset, split == FALSE)
 # trainingSet[, 2:3] = scale(trainingSet[, 2:3])
 # testSet[, 2:3] = scale(testSet[, 2:3])
 
+# Fitting Simple Linear Regression to the Training set
+regressor = lm(formula = Salary ~ YearsExperience,
+               data = trainingSet)
+summary(regressor)
+
