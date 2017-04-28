@@ -51,4 +51,10 @@ plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color = 'blu
 plt.title('Truth or Bluff (Polynomial Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
-plt.show() 
+plt.show()
+
+# Predicting a new result with Linear Regression
+lin_reg.predict(6.5)
+
+# Predicting a new result with Polynomial Regression
+lin_reg_2.predict(poly_reg.fit_transform(6.5))
