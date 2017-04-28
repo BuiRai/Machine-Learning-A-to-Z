@@ -22,3 +22,8 @@ testSet = subset(dataset, split == FALSE)
 # ------------------------------ Feature Scaling -----------------------------------
 # trainingSet[, 2:3] = scale(trainingSet[, 2:3])
 # testSet[, 2:3] = scale(testSet[, 2:3])
+
+# Fitting Multiple Linear Regression to the Training set
+regressor = lm(formula = Profit ~ .,
+               data = trainingSet)
+summary(regressor)
