@@ -30,3 +30,20 @@ summary(regressor)
 
 # Predicting the Test set results
 y_pred = predict(regressor, newdata = testSet)
+
+# Building the optimal model using Backward Elimination
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State,
+               data = dataset)
+summary(regressor)
+# Removing the state variable, because the P values is the highest
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend,
+               data = dataset)
+summary(regressor)
+# Removing the Administration variable, because the P values is the highest
+regressor = lm(formula = Profit ~ R.D.Spend + Marketing.Spend,
+               data = dataset)
+summary(regressor)
+# Removing the Marketing.Spend variable, because the P values is the highest
+regressor = lm(formula = Profit ~ R.D.Spend,
+               data = dataset)
+summary(regressor)
