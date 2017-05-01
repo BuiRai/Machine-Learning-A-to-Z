@@ -16,3 +16,7 @@ testSet = subset(dataset, split == FALSE)
 trainingSet[, 1:2] = scale(trainingSet[, 1:2])
 testSet[, 1:2] = scale(testSet[, 1:2])
 
+# Fitting Logistic Regression to the Training set
+classifier = glm(formula = Purchased ~ .,
+                 family = binomial,
+                 data = trainingSet)
