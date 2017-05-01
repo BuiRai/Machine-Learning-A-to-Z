@@ -20,3 +20,7 @@ testSet[, 1:2] = scale(testSet[, 1:2])
 classifier = glm(formula = Purchased ~ .,
                  family = binomial,
                  data = trainingSet)
+
+# Predicting the Test set results
+prob_pred = predict(classifier, type = 'response', newdata = testSet[-3])
+y_pred = ifelse(prob_pred > 0.5, 1, 0)
