@@ -10,3 +10,7 @@ plot(dendrogram,
      main = paste('Dendrogram'),
      xlab = 'Customers',
      ylab = 'Euclidean distances')
+
+# Fitting hierarchical clustering to the mall dataset
+hc = hclust(dist(X, method = 'euclidean'), method = 'ward.D')
+y_hc = cutree(hc, 5)
